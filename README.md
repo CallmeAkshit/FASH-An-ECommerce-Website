@@ -1,70 +1,358 @@
-# Getting Started with Create React App
+# Ecommerce Website (Contributors - Akshit Bansal and Jyoti Vakare)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![grab-landing-page](https://github.com/CallmeAkshit/ecommerce-mern/blob/master/MERN%20Demo.gif)
 
-In the project directory, you can run:
+## Demo Link
 
-### `npm start`
+https://ecommerce-myntra-clone.herokuapp.com/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About this site
+●	Cloned an ecommerce website from frontend till backend.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+●	Added features like Sign-in/Login page, Product listing page, product detail page, Cart Features, Payment Integration
 
-### `npm test`
+●	Incorporated Payment Integration with Razorpay. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+●	Designed REST APIs for frontend to interact with database and integrated APIs with frontend code.
 
-### `npm run build`
+# API Specs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Get cart associated with the session id
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+GET /api/carts/me
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sample Response Body:
+{
 
-### `npm run eject`
+	"id": "cartid"
+	
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Status: 201 (Cart returned), 500 (sessionid is invalid)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## List all products
+GET /api/products/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Sample Response Body:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+{
 
-## Learn More
+    uniq_id: {type : String},
+    crawl_timestamp: {type : String},
+    product_id: {type : String},
+    link:{type : String},
+    size:{type : String},
+    variant_sku:{type : String},
+    brand:{type : String},
+    care_instructions:{type : String},
+    dominant_material:{type : String},
+    title:{type : String},
+    actual_color:{type : String},
+    dominant_color:{type : String},
+    product_type:{type : String},
+    images:{type : String},
+    body:{type : String},
+    product_details:{type : String},
+    size_fit:{type : String},
+    complete_the_look:{type : String},
+    type:{type : String},
+    variant_price:{type : String},
+    variant_compare_at_price:{type : String},
+    ideal_for:{type : String},
+    is_in_stock:{type : String},
+    inventory:{type : String}
+    
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Status: 201 (Product returned), 500 (Internal Server error), 201 (No product found)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## List products by category Male (Boys, Men, Unisex)
 
-### Code Splitting
+GET /api/products/men
+GET /api/products/boys
+GET /api/products/unisex
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Sample Response Body: 
 
-### Analyzing the Bundle Size
+{
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    uniq_id: {type : String},
+    crawl_timestamp: {type : String},
+    product_id: {type : String},
+    link:{type : String},
+    size:{type : String},
+    variant_sku:{type : String},
+    brand:{type : String},
+    care_instructions:{type : String},
+    dominant_material:{type : String},
+    title:{type : String},
+    actual_color:{type : String},
+    dominant_color:{type : String},
+    product_type:{type : String},
+    images:{type : String},
+    body:{type : String},
+    product_details:{type : String},
+    size_fit:{type : String},
+    complete_the_look:{type : String},
+    type:{type : String},
+    variant_price:{type : String},
+    variant_compare_at_price:{type : String},
+    ideal_for:{type : String},
+    is_in_stock:{type : String},
+    inventory:{type : String}
+    
+}
 
-### Making a Progressive Web App
+Status: 201 (Product returned), 500 (Internal Server error), 201 (No product found)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## List products by category Female (Girls, Women, Unisex)
 
-### Advanced Configuration
+GET /api/products/Women
+GET /api/products/Girls
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Sample Response Body: 
 
-### Deployment
+{
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    uniq_id: {type : String},
+    crawl_timestamp: {type : String},
+    product_id: {type : String},
+    link:{type : String},
+    size:{type : String},
+    variant_sku:{type : String},
+    brand:{type : String},
+    care_instructions:{type : String},
+    dominant_material:{type : String},
+    title:{type : String},
+    actual_color:{type : String},
+    dominant_color:{type : String},
+    product_type:{type : String},
+    images:{type : String},
+    body:{type : String},
+    product_details:{type : String},
+    size_fit:{type : String},
+    complete_the_look:{type : String},
+    type:{type : String},
+    variant_price:{type : String},
+    variant_compare_at_price:{type : String},
+    ideal_for:{type : String},
+    is_in_stock:{type : String},
+    inventory:{type : String}
+    
+}
 
-### `npm run build` fails to minify
+Status: 201 (Product returned), 500 (Internal Server error), 201 (No product found)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## List products by brand
+
+GET /api/products/brand/:brandName
+
+Sample Response Body: 
+
+{
+
+    uniq_id: {type : String},
+    crawl_timestamp: {type : String},
+    product_id: {type : String},
+    link:{type : String},
+    size:{type : String},
+    variant_sku:{type : String},
+    brand:{type : String},
+    care_instructions:{type : String},
+    dominant_material:{type : String},
+    title:{type : String},
+    actual_color:{type : String},
+    dominant_color:{type : String},
+    product_type:{type : String},
+    images:{type : String},
+    body:{type : String},
+    product_details:{type : String},
+    size_fit:{type : String},
+    complete_the_look:{type : String},
+    type:{type : String},
+    variant_price:{type : String},
+    variant_compare_at_price:{type : String},
+    ideal_for:{type : String},
+    is_in_stock:{type : String},
+    inventory:{type : String}
+    
+}
+
+Status: 201 (Product returned), 500 (Internal Server error), 201 (No product found)
+
+## List products by product ID
+
+GET /api/products/productID/:productID
+
+Sample Response Body: 
+
+{
+
+    uniq_id: {type : String},
+    crawl_timestamp: {type : String},
+    product_id: {type : String},
+    link:{type : String},
+    size:{type : String},
+    variant_sku:{type : String},
+    brand:{type : String},
+    care_instructions:{type : String},
+    dominant_material:{type : String},
+    title:{type : String},
+    actual_color:{type : String},
+    dominant_color:{type : String},
+    product_type:{type : String},
+    images:{type : String},
+    body:{type : String},
+    product_details:{type : String},
+    size_fit:{type : String},
+    complete_the_look:{type : String},
+    type:{type : String},
+    variant_price:{type : String},
+    variant_compare_at_price:{type : String},
+    ideal_for:{type : String},
+    is_in_stock:{type : String},
+    inventory:{type : String}
+    
+}
+
+
+Status: 201 (Product returned), 500 (Internal Server error), 201 (No product found)
+
+## List products sorted by price and category
+
+GET /api/products/brand/:brandName/sortBy/:sortType
+
+Sample Response Body: 
+
+{
+
+    uniq_id: {type : String},
+    crawl_timestamp: {type : String},
+    product_id: {type : String},
+    link:{type : String},
+    size:{type : String},
+    variant_sku:{type : String},
+    brand:{type : String},
+    care_instructions:{type : String},
+    dominant_material:{type : String},
+    title:{type : String},
+    actual_color:{type : String},
+    dominant_color:{type : String},
+    product_type:{type : String},
+    images:{type : String},
+    body:{type : String},
+    product_details:{type : String},
+    size_fit:{type : String},
+    complete_the_look:{type : String},
+    type:{type : String},
+    variant_price:{type : String},
+    variant_compare_at_price:{type : String},
+    ideal_for:{type : String},
+    is_in_stock:{type : String},
+    inventory:{type : String}
+    
+}
+
+
+Status: 201 (Product returned), 500 (Internal Server error), 201 (No product found)
+
+## Add a new product to Cart
+
+POST /api/cart
+Sample Request Body:
+
+{
+
+	"cartItem" : { productId: String, qty: Number, pricePerUnit: Number, brand : String, title : String, images: String }
+	
+}
+
+Sample Response Body:
+{
+
+	"id": "sessionID"
+	
+}
+
+Status: 201 (Product Added to Cart), 400 (SessionID/ cartItem not in request), 500 (Error while adding cart to Item)
+
+## Update quantity of a product in Cart
+
+PUT /api/cart
+
+Sample Request Body:
+{
+
+	"productID": "1234",
+	"qty": "1",
+	
+}
+
+Sample Response Body:
+{
+
+	"id": "cartid"
+	
+}
+
+Status: 204 (Item updated to cart), 400 (Invalid Session ID or Invalid Product ID) 400 (Qty missing in request) 400 (Empty Body Sent in request)
+
+# Delete a Product from Cart
+
+DELETE /api/cart/:productID
+
+Status: 201 (product removed from cart), 500 (Internal Server Error), 400 (Product ID not present in request)
+
+# Create Order 
+
+POST /api/orders
+
+Sample Request Body: {user_id,amount,currency,status}
+
+All the values are fetched from the session ID.
+
+Sample Response Body:
+{
+    amount,
+    currency,
+    orderId,
+    //This is required by client to co-ordinate with razorpay
+    rzpOrderId: rzpOrder.id
+ }
+ 
+Status: 201 (Order Created), 500 (Order creation failed with Razorpay)
+
+# Update order status on payment completion/failure.
+
+PUT /api/orders/:orderID
+
+Sample Response Body:
+{
+
+	"id": "orderID"
+	
+}
+
+Status: 204 (Payment Succesful), 400 (Payment failed) 400 (Empty Body Sent in request)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
