@@ -1,7 +1,7 @@
 # Ecommerce Website (Contributors - Akshit Bansal and Jyoti Vakare)
 
 
-![grab-landing-page](https://github.com/CallmeAkshit/ecommerce-mern/blob/master/MERN%20Demo.gif)
+![grab-landing-page](https://github.com/CallmeAkshit/FASH-An-ECommerce-Website/blob/master/MERN%20Demo.gif)
 
 ## Demo Link
 
