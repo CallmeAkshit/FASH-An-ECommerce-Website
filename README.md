@@ -1,4 +1,4 @@
-# Ecommerce Website (Contributors - Akshit Bansal and Jyoti Vakare)
+# Ecommerce Website - FASH
 
 
 ![grab-landing-page](https://github.com/CallmeAkshit/FASH-An-ECommerce-Website/blob/master/MERN%20Demo.gif)
